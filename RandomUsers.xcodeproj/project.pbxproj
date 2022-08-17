@@ -13,6 +13,10 @@
 		71C11E1428ACBF29006923B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C11E1228ACBF29006923B3 /* Main.storyboard */; };
 		71C11E1628ACBF2A006923B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C11E1528ACBF2A006923B3 /* Assets.xcassets */; };
 		71C11E1928ACBF2A006923B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C11E1728ACBF2A006923B3 /* LaunchScreen.storyboard */; };
+		71C11E2228ACBFB4006923B3 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 71C11E2128ACBFB4006923B3 /* Then */; };
+		71C11E2528ACBFD9006923B3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 71C11E2428ACBFD9006923B3 /* SnapKit */; };
+		71C11E2828ACBFF4006923B3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 71C11E2728ACBFF4006923B3 /* Alamofire */; };
+		71C11E2B28ACC01B006923B3 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 71C11E2A28ACC01B006923B3 /* NVActivityIndicatorView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C11E2B28ACC01B006923B3 /* NVActivityIndicatorView in Frameworks */,
+				71C11E2828ACBFF4006923B3 /* Alamofire in Frameworks */,
+				71C11E2228ACBFB4006923B3 /* Then in Frameworks */,
+				71C11E2528ACBFD9006923B3 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +91,12 @@
 			dependencies = (
 			);
 			name = RandomUsers;
+			packageProductDependencies = (
+				71C11E2128ACBFB4006923B3 /* Then */,
+				71C11E2428ACBFD9006923B3 /* SnapKit */,
+				71C11E2728ACBFF4006923B3 /* Alamofire */,
+				71C11E2A28ACC01B006923B3 /* NVActivityIndicatorView */,
+			);
 			productName = RandomUsers;
 			productReference = 71C11E0928ACBF29006923B3 /* RandomUsers.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,12 @@
 				Base,
 			);
 			mainGroup = 71C11E0028ACBF29006923B3;
+			packageReferences = (
+				71C11E2028ACBFB4006923B3 /* XCRemoteSwiftPackageReference "Then" */,
+				71C11E2328ACBFD9006923B3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				71C11E2628ACBFF4006923B3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				71C11E2928ACC01B006923B3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+			);
 			productRefGroup = 71C11E0A28ACBF29006923B3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +378,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		71C11E2028ACBFB4006923B3 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		71C11E2328ACBFD9006923B3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		71C11E2628ACBFF4006923B3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		71C11E2928ACC01B006923B3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		71C11E2128ACBFB4006923B3 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71C11E2028ACBFB4006923B3 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		71C11E2428ACBFD9006923B3 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71C11E2328ACBFD9006923B3 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		71C11E2728ACBFF4006923B3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71C11E2628ACBFF4006923B3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		71C11E2A28ACC01B006923B3 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71C11E2928ACC01B006923B3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 71C11E0128ACBF29006923B3 /* Project object */;
 }

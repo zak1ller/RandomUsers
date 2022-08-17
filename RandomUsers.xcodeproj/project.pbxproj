@@ -19,6 +19,10 @@
 		71C11E2B28ACC01B006923B3 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 71C11E2A28ACC01B006923B3 /* NVActivityIndicatorView */; };
 		71C11E3128ACC4BF006923B3 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E3028ACC4BF006923B3 /* UserResponse.swift */; };
 		71C11E3428ACC52D006923B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E3328ACC52D006923B3 /* User.swift */; };
+		71C11E3628ACC6A5006923B3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E3528ACC6A5006923B3 /* NetworkError.swift */; };
+		71C11E3928ACC723006923B3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E3828ACC723006923B3 /* HomeViewModel.swift */; };
+		71C11E3B28ACC7BC006923B3 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E3A28ACC7BC006923B3 /* UserDataManager.swift */; };
+		71C11E3D28AD0F09006923B3 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E3C28AD0F09006923B3 /* Agent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		71C11E1A28ACBF2A006923B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71C11E3028ACC4BF006923B3 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		71C11E3328ACC52D006923B3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		71C11E3528ACC6A5006923B3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		71C11E3828ACC723006923B3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		71C11E3A28ACC7BC006923B3 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		71C11E3C28AD0F09006923B3 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				71C11E3228ACC525006923B3 /* Model */,
+				71C11E3728ACC718006923B3 /* ViewModel */,
 				71C11E2F28ACC4AF006923B3 /* Network */,
 				71C11E2C28ACC120006923B3 /* Delegate */,
 			);
@@ -108,6 +117,8 @@
 		71C11E2F28ACC4AF006923B3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				71C11E3A28ACC7BC006923B3 /* UserDataManager.swift */,
+				71C11E3C28AD0F09006923B3 /* Agent.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -115,10 +126,19 @@
 		71C11E3228ACC525006923B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				71C11E3028ACC4BF006923B3 /* UserResponse.swift */,
 				71C11E3328ACC52D006923B3 /* User.swift */,
+				71C11E3028ACC4BF006923B3 /* UserResponse.swift */,
+				71C11E3528ACC6A5006923B3 /* NetworkError.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		71C11E3728ACC718006923B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				71C11E3828ACC723006923B3 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,7 +226,11 @@
 			files = (
 				71C11E1128ACBF29006923B3 /* HomeViewController.swift in Sources */,
 				71C11E0D28ACBF29006923B3 /* AppDelegate.swift in Sources */,
+				71C11E3928ACC723006923B3 /* HomeViewModel.swift in Sources */,
+				71C11E3D28AD0F09006923B3 /* Agent.swift in Sources */,
 				71C11E0F28ACBF29006923B3 /* SceneDelegate.swift in Sources */,
+				71C11E3B28ACC7BC006923B3 /* UserDataManager.swift in Sources */,
+				71C11E3628ACC6A5006923B3 /* NetworkError.swift in Sources */,
 				71C11E3428ACC52D006923B3 /* User.swift in Sources */,
 				71C11E3128ACC4BF006923B3 /* UserResponse.swift in Sources */,
 			);

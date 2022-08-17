@@ -9,10 +9,25 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+  let viewModel = HomeViewModel()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    setView()
+    setConstraint()
+    bind()
   }
   
+  private func bind() {
+    
+  }
+  
+  private func setView() {
+    
+  }
+  
+  private func setConstraint() {
+    
+  }
 }
 

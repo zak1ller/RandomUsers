@@ -8,9 +8,12 @@
 import UIKit
 import Combine
 import Kingfisher
+import NVActivityIndicatorView
 
 class HomeViewController: UIViewController {
-
+  
+  lazy var loadingView = NVActivityIndicatorView(frame: .zero, type: .circleStrokeSpin)
+  
   lazy var stackView = UIStackView().then {
     $0.axis = .vertical
     $0.alignment = .center
@@ -43,6 +46,16 @@ class HomeViewController: UIViewController {
   }
   
   private func bind() {
+    viewModel.$showingLoading
+      .sink { showingLoading in
+        if showingLoading {
+          self.loadingView.startAnimating()
+        } else {
+          self.loadingView.stopAnimating()
+        }
+      }
+      .store(in: &subscriptions)
+    
     viewModel.$errorMessage
       .sink { errorMessage in
         let alert = UIAlertController(
@@ -81,6 +94,8 @@ class HomeViewController: UIViewController {
     stackView.addArrangedSubview(userImageView)
     stackView.addArrangedSubview(UIView.makeEmptyView(width: 16, height: 16))
     stackView.addArrangedSubview(usernameLabel)
+    
+    view.addSubview(loadingView)
   }
   
   private func setConstraint() {
@@ -92,6 +107,11 @@ class HomeViewController: UIViewController {
     
     userImageView.snp.makeConstraints { make in
       make.width.height.equalTo(150)
+    }
+    
+    loadingView.snp.makeConstraints { make in
+      make.width.height.equalTo(32)
+      make.centerX.centerY.equalToSuperview()
     }
   }
 }

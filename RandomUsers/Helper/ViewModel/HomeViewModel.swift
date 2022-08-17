@@ -13,8 +13,10 @@ final class HomeViewModel {
   
   @Published var user: User?
   @Published var errorMessage: String?
+  @Published var showingLoading = false
   
   func fetchUser() {
+    showingLoading = true
     UserDataManager.getRandomUser()
       .sink { completion in
         switch completion {
@@ -31,6 +33,7 @@ final class HomeViewModel {
       } receiveValue: { response in
         guard let user = response.results.first else { return }
         self.user = user
+        self.showingLoading = false
       }
       .store(in: &subscriptions)
   }

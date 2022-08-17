@@ -10,7 +10,9 @@ import Combine
 
 final class HomeViewModel {
   private var subscriptions = Set<AnyCancellable>()
+  
   @Published var user: User?
+  @Published var errorMessage: String?
   
   func fetchUser() {
     UserDataManager.getRandomUser()
@@ -19,7 +21,12 @@ final class HomeViewModel {
         case .finished:
           break
         case .failure(let error):
-          print(error)
+          switch error {
+          case .http(let error):
+            self.errorMessage = error.message
+          case .unknown:
+            self.errorMessage = "Unknown error"
+          }
         }
       } receiveValue: { response in
         guard let user = response.results.first else { return }

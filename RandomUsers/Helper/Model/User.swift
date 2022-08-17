@@ -13,6 +13,10 @@ struct User: Codable {
   let location: Locaton
   let email: String
   let picture: Picture
+  
+  func getUsername() -> String {
+    return "\(name.title) \(name.first) \(name.last)"
+  }
 }
 
 struct Username: Codable {

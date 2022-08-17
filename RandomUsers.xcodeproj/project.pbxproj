@@ -23,6 +23,8 @@
 		71C11E3928ACC723006923B3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E3828ACC723006923B3 /* HomeViewModel.swift */; };
 		71C11E3B28ACC7BC006923B3 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E3A28ACC7BC006923B3 /* UserDataManager.swift */; };
 		71C11E3D28AD0F09006923B3 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E3C28AD0F09006923B3 /* Agent.swift */; };
+		71C11E4028AD1DCE006923B3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 71C11E3F28AD1DCE006923B3 /* Kingfisher */; };
+		71C11E4528AD20B8006923B3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E4428AD20B8006923B3 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,7 @@
 		71C11E3828ACC723006923B3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		71C11E3A28ACC7BC006923B3 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		71C11E3C28AD0F09006923B3 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		71C11E4428AD20B8006923B3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 				71C11E2828ACBFF4006923B3 /* Alamofire in Frameworks */,
 				71C11E2228ACBFB4006923B3 /* Then in Frameworks */,
 				71C11E2528ACBFD9006923B3 /* SnapKit in Frameworks */,
+				71C11E4028AD1DCE006923B3 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +110,7 @@
 		71C11E2E28ACC13E006923B3 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				71C11E4328AD20AA006923B3 /* Extension */,
 				71C11E3228ACC525006923B3 /* Model */,
 				71C11E3728ACC718006923B3 /* ViewModel */,
 				71C11E2F28ACC4AF006923B3 /* Network */,
@@ -141,6 +146,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		71C11E4328AD20AA006923B3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				71C11E4428AD20B8006923B3 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +175,7 @@
 				71C11E2428ACBFD9006923B3 /* SnapKit */,
 				71C11E2728ACBFF4006923B3 /* Alamofire */,
 				71C11E2A28ACC01B006923B3 /* NVActivityIndicatorView */,
+				71C11E3F28AD1DCE006923B3 /* Kingfisher */,
 			);
 			productName = RandomUsers;
 			productReference = 71C11E0928ACBF29006923B3 /* RandomUsers.app */;
@@ -196,6 +210,7 @@
 				71C11E2328ACBFD9006923B3 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				71C11E2628ACBFF4006923B3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				71C11E2928ACC01B006923B3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				71C11E3E28AD1DCE006923B3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 71C11E0A28ACBF29006923B3 /* Products */;
 			projectDirPath = "";
@@ -232,6 +247,7 @@
 				71C11E3B28ACC7BC006923B3 /* UserDataManager.swift in Sources */,
 				71C11E3628ACC6A5006923B3 /* NetworkError.swift in Sources */,
 				71C11E3428ACC52D006923B3 /* User.swift in Sources */,
+				71C11E4528AD20B8006923B3 /* UIView+Extension.swift in Sources */,
 				71C11E3128ACC4BF006923B3 /* UserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +500,14 @@
 				kind = branch;
 			};
 		};
+		71C11E3E28AD1DCE006923B3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -506,6 +530,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 71C11E2928ACC01B006923B3 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
+		};
+		71C11E3F28AD1DCE006923B3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71C11E3E28AD1DCE006923B3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		71C11E0D28ACBF29006923B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E0C28ACBF29006923B3 /* AppDelegate.swift */; };
 		71C11E0F28ACBF29006923B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E0E28ACBF29006923B3 /* SceneDelegate.swift */; };
-		71C11E1128ACBF29006923B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E1028ACBF29006923B3 /* ViewController.swift */; };
+		71C11E1128ACBF29006923B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E1028ACBF29006923B3 /* HomeViewController.swift */; };
 		71C11E1428ACBF29006923B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C11E1228ACBF29006923B3 /* Main.storyboard */; };
 		71C11E1628ACBF2A006923B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C11E1528ACBF2A006923B3 /* Assets.xcassets */; };
 		71C11E1928ACBF2A006923B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C11E1728ACBF2A006923B3 /* LaunchScreen.storyboard */; };
@@ -17,17 +17,21 @@
 		71C11E2528ACBFD9006923B3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 71C11E2428ACBFD9006923B3 /* SnapKit */; };
 		71C11E2828ACBFF4006923B3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 71C11E2728ACBFF4006923B3 /* Alamofire */; };
 		71C11E2B28ACC01B006923B3 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 71C11E2A28ACC01B006923B3 /* NVActivityIndicatorView */; };
+		71C11E3128ACC4BF006923B3 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E3028ACC4BF006923B3 /* UserResponse.swift */; };
+		71C11E3428ACC52D006923B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E3328ACC52D006923B3 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		71C11E0928ACBF29006923B3 /* RandomUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C11E0C28ACBF29006923B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71C11E0E28ACBF29006923B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		71C11E1028ACBF29006923B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71C11E1028ACBF29006923B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		71C11E1328ACBF29006923B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71C11E1528ACBF2A006923B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71C11E1828ACBF2A006923B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71C11E1A28ACBF2A006923B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71C11E3028ACC4BF006923B3 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		71C11E3328ACC52D006923B3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,15 +68,57 @@
 		71C11E0B28ACBF29006923B3 /* RandomUsers */ = {
 			isa = PBXGroup;
 			children = (
-				71C11E0C28ACBF29006923B3 /* AppDelegate.swift */,
-				71C11E0E28ACBF29006923B3 /* SceneDelegate.swift */,
-				71C11E1028ACBF29006923B3 /* ViewController.swift */,
-				71C11E1228ACBF29006923B3 /* Main.storyboard */,
+				71C11E2D28ACC126006923B3 /* UI */,
+				71C11E2E28ACC13E006923B3 /* Helper */,
 				71C11E1528ACBF2A006923B3 /* Assets.xcassets */,
-				71C11E1728ACBF2A006923B3 /* LaunchScreen.storyboard */,
 				71C11E1A28ACBF2A006923B3 /* Info.plist */,
 			);
 			path = RandomUsers;
+			sourceTree = "<group>";
+		};
+		71C11E2C28ACC120006923B3 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				71C11E0C28ACBF29006923B3 /* AppDelegate.swift */,
+				71C11E0E28ACBF29006923B3 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		71C11E2D28ACC126006923B3 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				71C11E1228ACBF29006923B3 /* Main.storyboard */,
+				71C11E1728ACBF2A006923B3 /* LaunchScreen.storyboard */,
+				71C11E1028ACBF29006923B3 /* HomeViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		71C11E2E28ACC13E006923B3 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				71C11E3228ACC525006923B3 /* Model */,
+				71C11E2F28ACC4AF006923B3 /* Network */,
+				71C11E2C28ACC120006923B3 /* Delegate */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		71C11E2F28ACC4AF006923B3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		71C11E3228ACC525006923B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71C11E3028ACC4BF006923B3 /* UserResponse.swift */,
+				71C11E3328ACC52D006923B3 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,9 +204,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71C11E1128ACBF29006923B3 /* ViewController.swift in Sources */,
+				71C11E1128ACBF29006923B3 /* HomeViewController.swift in Sources */,
 				71C11E0D28ACBF29006923B3 /* AppDelegate.swift in Sources */,
 				71C11E0F28ACBF29006923B3 /* SceneDelegate.swift in Sources */,
+				71C11E3428ACC52D006923B3 /* User.swift in Sources */,
+				71C11E3128ACC4BF006923B3 /* UserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

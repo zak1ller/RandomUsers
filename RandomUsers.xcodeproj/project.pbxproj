@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		716BD4AF28AE00220077BC9F /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BD4AE28AE00220077BC9F /* UserDetailViewController.swift */; };
+		716BD4B128AE005C0077BC9F /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BD4B028AE005C0077BC9F /* UserDetailViewModel.swift */; };
+		716BD4B428AE03D10077BC9F /* UserBigImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BD4B328AE03D10077BC9F /* UserBigImageView.swift */; };
+		716BD4B628AE0A240077BC9F /* UserImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BD4B528AE0A240077BC9F /* UserImageDetailViewController.swift */; };
 		71C11E0D28ACBF29006923B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E0C28ACBF29006923B3 /* AppDelegate.swift */; };
 		71C11E0F28ACBF29006923B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E0E28ACBF29006923B3 /* SceneDelegate.swift */; };
 		71C11E1128ACBF29006923B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C11E1028ACBF29006923B3 /* HomeViewController.swift */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		716BD4AE28AE00220077BC9F /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		716BD4B028AE005C0077BC9F /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		716BD4B328AE03D10077BC9F /* UserBigImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBigImageView.swift; sourceTree = "<group>"; };
+		716BD4B528AE0A240077BC9F /* UserImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageDetailViewController.swift; sourceTree = "<group>"; };
 		71C11E0928ACBF29006923B3 /* RandomUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C11E0C28ACBF29006923B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71C11E0E28ACBF29006923B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		716BD4B228AE03B00077BC9F /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				716BD4B328AE03D10077BC9F /* UserBigImageView.swift */,
+			);
+			path = "Custom View";
+			sourceTree = "<group>";
+		};
 		71C11E0028ACBF29006923B3 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +116,8 @@
 			children = (
 				71C11E1728ACBF2A006923B3 /* LaunchScreen.storyboard */,
 				71C11E1028ACBF29006923B3 /* HomeViewController.swift */,
+				716BD4AE28AE00220077BC9F /* UserDetailViewController.swift */,
+				716BD4B528AE0A240077BC9F /* UserImageDetailViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -107,9 +125,10 @@
 		71C11E2E28ACC13E006923B3 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				716BD4B228AE03B00077BC9F /* Custom View */,
 				71C11E4328AD20AA006923B3 /* Extension */,
 				71C11E3228ACC525006923B3 /* Model */,
-				71C11E3728ACC718006923B3 /* ViewModel */,
+				71C11E3728ACC718006923B3 /* View Model */,
 				71C11E2F28ACC4AF006923B3 /* Network */,
 				71C11E2C28ACC120006923B3 /* Delegate */,
 			);
@@ -135,12 +154,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		71C11E3728ACC718006923B3 /* ViewModel */ = {
+		71C11E3728ACC718006923B3 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
 				71C11E3828ACC723006923B3 /* HomeViewModel.swift */,
+				716BD4B028AE005C0077BC9F /* UserDetailViewModel.swift */,
 			);
-			path = ViewModel;
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		71C11E4328AD20AA006923B3 /* Extension */ = {
@@ -241,10 +261,14 @@
 				71C11E3D28AD0F09006923B3 /* Agent.swift in Sources */,
 				71C11E0F28ACBF29006923B3 /* SceneDelegate.swift in Sources */,
 				71C11E3B28ACC7BC006923B3 /* UserDataManager.swift in Sources */,
+				716BD4B628AE0A240077BC9F /* UserImageDetailViewController.swift in Sources */,
+				716BD4B128AE005C0077BC9F /* UserDetailViewModel.swift in Sources */,
+				716BD4B428AE03D10077BC9F /* UserBigImageView.swift in Sources */,
 				71C11E3628ACC6A5006923B3 /* NetworkError.swift in Sources */,
 				71C11E3428ACC52D006923B3 /* User.swift in Sources */,
 				71C11E4528AD20B8006923B3 /* UIView+Extension.swift in Sources */,
 				71C11E3128ACC4BF006923B3 /* UserResponse.swift in Sources */,
+				716BD4AF28AE00220077BC9F /* UserDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

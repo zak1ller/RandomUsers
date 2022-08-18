@@ -19,12 +19,8 @@ class HomeViewController: UIViewController {
     $0.alignment = .center
   }
   
-  lazy var userImageView = UIImageView().then {
-    $0.tintColor = .darkGray
-    $0.layer.borderColor = UIColor.white.cgColor
-    $0.layer.borderWidth = 1
-    $0.layer.cornerRadius = 75
-    $0.clipsToBounds = true
+  lazy var userImageView = UserBigImageView(image: nil).then {
+    $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userImageTapped)))
   }
   
   lazy var usernameLabel = UILabel().then {
@@ -92,6 +88,8 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController {
   private func setView() {
+    view.backgroundColor = .black
+    
     view.addSubview(stackView)
     
     stackView.addArrangedSubview(userImageView)
@@ -108,10 +106,6 @@ extension HomeViewController {
       make.centerY.equalToSuperview()
     }
     
-    userImageView.snp.makeConstraints { make in
-      make.width.height.equalTo(150)
-    }
-    
     loadingView.snp.makeConstraints { make in
       make.width.height.equalTo(32)
       make.centerX.centerY.equalToSuperview()
@@ -122,6 +116,9 @@ extension HomeViewController {
 extension HomeViewController {
   @objc func userImageTapped() {
     guard let user = viewModel.user else { return }
-    
+    let vc = UserDetailViewController()
+    let viewModel = UserDetailViewModel(user: user)
+    vc.viewModel = viewModel
+    navigationController?.pushViewController(vc, animated: true)
   }
 }

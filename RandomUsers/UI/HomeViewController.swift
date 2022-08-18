@@ -57,6 +57,7 @@ class HomeViewController: UIViewController {
       .store(in: &subscriptions)
     
     viewModel.$errorMessage
+      .compactMap { $0 }
       .sink { errorMessage in
         let alert = UIAlertController(
           title: "Error",
@@ -87,7 +88,9 @@ class HomeViewController: UIViewController {
       }
       .store(in: &subscriptions)
   }
-  
+}
+
+extension HomeViewController {
   private func setView() {
     view.addSubview(stackView)
     

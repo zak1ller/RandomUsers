@@ -28,6 +28,11 @@ class HomeViewController: UIViewController {
     $0.font = .systemFont(ofSize: 20, weight: .heavy)
   }
   
+  lazy var changeUserButton = UIButton(type: .system).then {
+    $0.addTarget(self, action: #selector(changeUserButtonTapped), for: .touchUpInside)
+    $0.setTitle("Change User", for: .normal)
+  }
+  
   private let viewModel = HomeViewModel()
   private var subscriptions = Set<AnyCancellable>()
   
@@ -49,6 +54,7 @@ class HomeViewController: UIViewController {
         } else {
           self.loadingView.stopAnimating()
         }
+        self.stackView.isHidden = showingLoading
       }
       .store(in: &subscriptions)
     
@@ -71,16 +77,11 @@ class HomeViewController: UIViewController {
       .store(in: &subscriptions)
     
     viewModel.$user
+      .compactMap { $0 }
       .sink { user in
-        if let user = user {
-          let imageUrl = URL(string: user.picture.large)
-          self.userImageView.isHidden = false
-          self.userImageView.kf.setImage(with: imageUrl, placeholder: UIImage(named: "user")?.withRenderingMode(.alwaysTemplate))
-          self.usernameLabel.text = user.getUsername()
-        } else {
-          self.userImageView.isHidden = true
-          self.usernameLabel.text = nil
-        }
+        let imageUrl = URL(string: user.picture.large)
+        self.userImageView.kf.setImage(with: imageUrl, placeholder: UIImage(named: "user")?.withRenderingMode(.alwaysTemplate))
+        self.usernameLabel.text = user.getUsername()
       }
       .store(in: &subscriptions)
   }
@@ -95,6 +96,8 @@ extension HomeViewController {
     stackView.addArrangedSubview(userImageView)
     stackView.addArrangedSubview(UIView.makeEmptyView(width: 16, height: 16))
     stackView.addArrangedSubview(usernameLabel)
+    stackView.addArrangedSubview(UIView.makeEmptyView(width: 16, height: 16))
+    stackView.addArrangedSubview(changeUserButton)
     
     view.addSubview(loadingView)
   }
@@ -120,5 +123,9 @@ extension HomeViewController {
     let viewModel = UserDetailViewModel(user: user)
     vc.viewModel = viewModel
     navigationController?.pushViewController(vc, animated: true)
+  }
+  
+  @objc func changeUserButtonTapped() {
+    viewModel.fetchUser()
   }
 }
